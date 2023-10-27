@@ -1,12 +1,2 @@
 def solution(numLog):
-    str = ""
-    for i in range(len(numLog)-1):
-        if numLog[i+1] - numLog[i] == 1:
-            str += "w"    
-        elif numLog[i+1] - numLog[i] == -1:
-            str += "s"    
-        elif numLog[i+1] - numLog[i] == 10:
-            str += "d"    
-        elif numLog[i+1] - numLog[i] == -10:
-            str += "a"    
-    return str
+        return "".join(["w" if numLog[i] - numLog[i - 1] == 1 else "s" if numLog[i] - numLog[i - 1] == -1 else "d" if numLog[i] - numLog[i - 1] == 10 else "a" for i in range(1, len(numLog))])
