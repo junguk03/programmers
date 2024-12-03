@@ -1,9 +1,9 @@
 def solution(s):
-    words = s.split(" ")
+    str1 = s.split(" ")
     result = []
-    for word in words:
-        if word:  # 빈 문자열이 아닌 경우에만 처리
-            result.append(word[0].upper() + word[1:].lower())
-        else:  # 빈 문자열인 경우에도 그대로 유지
-            result.append(word)
+    for str2 in str1:
+        if(str2):
+            result.append(str2[0].upper() + str2[1:].lower())
+        else:
+            result.append(str2)
     return " ".join(result)
