@@ -1,17 +1,17 @@
 def solution(s):
-    count = 0
-    for i in range(len(s)):
-        stack = []
-        for j in s:
-            if not stack:
-                stack.append(j)
-                continue
-            if stack[-1] + j == "()" or stack[-1] + j == "[]" or stack[-1] + j == "{}":
-                stack.pop()
+    strlen = len(s)
+    sum1 = 0
+    for i in range(strlen):
+        s2 = s
+        while(1):
+            if s2.find("()") == -1 and s2.find("{}") == -1 and s2.find("[]") == -1:
+                break
             else:
-                stack.append(j)
-        if not stack:
-            count += 1
+                s2 = s2.replace("()","")
+                s2 = s2.replace("{}","")
+                s2 = s2.replace("[]","")
+                if not s2:
+                    sum1 += 1
+                    break
         s = s[1:] + s[0]
-            
-    return count
+    return sum1
