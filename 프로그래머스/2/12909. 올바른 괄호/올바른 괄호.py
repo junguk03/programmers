@@ -1,13 +1,10 @@
 def solution(s):
-    arr = list()
+    sum = 0
     for i in range(len(s)):
         if s[i] == "(":
-            arr.append(s[i])
+            sum += 1
         else:
-            try:
-                arr.pop()
-            except:
-                return False
-                break
-            
-    return len(arr) == 0
+            sum -= 1
+        if sum < 0:
+            break
+    return sum == 0
